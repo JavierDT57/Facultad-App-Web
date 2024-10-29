@@ -142,14 +142,23 @@ switch ($_POST["acc"]) {
                   $areaIndice = 3;
                   break;
               }
-              //No existe, realizar inserción
-              $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
-              $administrativo->addAttribute('es', "ADMIN");
-              $administrativo->addChild('id_empleado', $id_empleado);
-              $administrativo->addChild('nombre', $nombre);
-              $administrativo->addChild('telefono', $telefono);
-              $administrativo->addChild('fecha_ing', $fecha_ing);
-              echo $xml->asXML("../xmlgeneral.xml");
+        // No existe, realizar inserción
+                $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
+                $administrativo->addAttribute('es', "ADMIN");
+                $administrativo->addChild('id_empleado', $id_empleado);
+                $administrativo->addChild('nombre', $nombre);
+                $administrativo->addChild('telefono', $telefono);
+                $administrativo->addChild('fecha_ing', $fecha_ing);
+
+                // Guardar el XML temporalmente
+                $xml->asXML("../xmlgeneral.xml");
+
+                // Formatear el XML con DOMDocument
+                $dom = new DOMDocument();
+                $dom->preserveWhiteSpace = false;
+                $dom->formatOutput = true;
+                $dom->load("../xmlgeneral.xml");
+                $dom->save("../xmlgeneral.xml");
             }
             break;
     }

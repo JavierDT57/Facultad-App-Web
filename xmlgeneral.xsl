@@ -17,149 +17,151 @@
       </head>
       <body class="fondo_main">
         <div class="container col-md-10">
-            <br />
-            <div align="center">
-                <img src="assets/escudo_buap.png" width="250px" height="250px" />
-                <img src="assets/letras.png" width="350px" height="100px" />
+          <br/>
+          <div align="center">
+            <img src="assets/escudo_buap.png" width="250px" height="250px"/>
+            <img src="assets/letras.png" width="350px" height="100px"/>
+          </div>
+          <br/>
+          <h2 align="center" class="titulo">FACULTAD DE CIENCIAS DE LA COMPUTACIÓN</h2>
+          <br/>
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="col">
+                  <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Estudiantes
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body col-md-12">
+                  <xsl:for-each select="facultad/posgrado/maestria/areas">
+                    <xsl:apply-templates select="area"/>
+                  </xsl:for-each>
+                </div>
+              </div>
             </div>
-            <br />
-            <h2 align="center" class="titulo">FACULTAD DE CIENCIAS DE LA COMPUTACIÓN</h2>
-            <br />
-            <div class="accordion" id="accordionExample">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="col">
-                            <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Estudiantes
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body col-md-12">
-                            <xsl:for-each select="facultad/posgrado/maestria/areas">
-                                <xsl:apply-templates select="area" />
-                            </xsl:for-each>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="col">
+                  <button class="btn btn-link collapsed text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Profesores
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse hidden" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="form-row">
+                  <div class="col" style="margin-top:10px;margin-left:20px">
+                    <button type="button" class="btn btn-success" name="button">
+                      <xsl:attribute name="onclick">
+                      agregar(2)
+                      </xsl:attribute>
+                    <i class="fas fa-plus-circle"></i>  Agregar Profesor
+                  </button>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="col">
-                            <button class="btn btn-link collapsed text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Profesores
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="form-row">
-                            <div class="col" style="margin-top:10px;margin-left:20px">
-                                <button type="button" class="btn btn-success" name="button" onclick="agregar(2)">
-                                    <i class="fas fa-plus-circle"></i> Agregar Profesor
-                                </button>
-                            </div>
-                            <div class="col input-group" style="margin-top:10px;margin-left:20px">
-                                <span class="input-group-text span_search">Búsqueda Por Nombre</span>
-                                <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm" onkeyup="doSearch('profesores','searchTerm')" />
-                            </div>
-                        </div>
-                        <div class="card-body col-md-12">
-                            <xsl:for-each select="facultad/posgrado/maestria/personal">
-                                <xsl:apply-templates select="profesores" />
-                            </xsl:for-each>
-                        </div>
-                    </div>
+                <div class="col input-group" style="margin-top:10px;margin-left:20px">
+                  <span class="input-group-text span_search">Búsqueda Por Nombre</span>
+                  <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm" onkeyup="doSearch('profesores','searchTerm')"/>
                 </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="col">
-                            <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                Materias
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="form-row">
-                            <div class="col" style="margin-top:10px;margin-left:10px">
-                                <button type="button" class="btn btn-success" name="button" onclick="agregar(3)">
-                                    <i class="fas fa-plus-circle"></i> Agregar Materia
-                                </button>
-                            </div>
-                            <div class="col input-group" style="margin-top:10px;margin-left:20px">
-                                <span class="input-group-text span_search">Búsqueda Por Nombre</span>
-                                <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm2" onkeyup="doSearch('materias','searchTerm2')" />
-                            </div>
-                        </div>
-                        <div class="card-body col-md-12">
-                            <table class="table" id="materias">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>Clave</th>
-                                        <th>Nombre</th>
-                                        <th>Créditos</th>
-                                        <th>Horario</th>
-                                        <th>Salón</th>
-                                        <th>Periodo</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <xsl:for-each select="facultad/posgrado/maestria/materias">
-                                        <xsl:apply-templates select="materia" />
-                                    </xsl:for-each>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
                 </div>
-    
-                <div class="card">
-                    <div class="card-header" id="headingFour">
-                        <h2 class="col">
-                            <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Personal Académico
+                <div class="card-body col-md-12">
+                  <xsl:for-each select="facultad/posgrado/maestria/personal">
+                    <xsl:apply-templates select="profesores"/>
+                  </xsl:for-each>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="col">
+                  <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    Materias
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse hidden" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="form-row">
+                  <div class="col" style="margin-top:10px;margin-left:10px">
+                    <button type="button" class="btn btn-success" name="button">
+                      <xsl:attribute name="onclick">
+                      agregar(3)
+                    </xsl:attribute>
+                    <i class="fas fa-plus-circle"></i>  Agregar Materia
+                  </button>
+                </div>
+                <div class="col input-group" style="margin-top:10px;margin-left:20px">
+                  <span class="input-group-text span_search">Búsqueda Por Nombre</span>
+                  <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm2" onkeyup="doSearch('materias','searchTerm2')"/>
+                </div>
+
+                </div>
+                <div class="card-body col-md-12">
+                  <table class="table" id="materias">
+                    <thead class="thead-dark">
+                      <th>Clave</th>
+                      <th>Nombre</th>
+                      <th>Creditos</th>
+                      <th>Horario</th>
+                      <th>Salón</th>
+                      <th>Periodo</th>
+                      <th>Acciones</th>
+                    </thead>
+                    <tbody>
+                      <xsl:for-each select="facultad/posgrado/maestria/materias">
+                        <xsl:apply-templates select="materia"/>
+                      </xsl:for-each>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="col">
+                        <button class="btn btn-link text_btn_acordeon" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Personal Académico
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="form-row">
+                        <div class="col" style="margin-top:10px;margin-left:20px">
+                            <button type="button" class="btn btn-success" name="button" onclick="agregar(4)">
+                                <i class="fas fa-plus-circle"></i> Agregar Personal Académico
                             </button>
-                        </h2>
+                        </div>
+                        <div class="col input-group" style="margin-top:10px;margin-left:20px">
+                            <span class="input-group-text span_search">Búsqueda Por Nombre</span>
+                            <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm3" onkeyup="doSearch('personal_academico','searchTerm3')" />
+                        </div>
                     </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                        <div class="form-row">
-                            <div class="col" style="margin-top:10px;margin-left:20px">
-                                <button type="button" class="btn btn-success" name="button" onclick="agregar(4)">
-                                    <i class="fas fa-plus-circle"></i> Agregar Personal Académico
-                                </button>
-                            </div>
-                            <div class="col input-group" style="margin-top:10px;margin-left:20px">
-                                <span class="input-group-text span_search">Búsqueda Por Nombre</span>
-                                <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm3" onkeyup="doSearch('personal_academico','searchTerm3')" />
-                            </div>
-                        </div>
-                        <div class="card-body col-md-12">
-                            <table class="table" id="personal_academico">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre</th>
-                                        <th>Cargo</th>
-                                        <th>Fecha de Ingreso</th>
-                                        <th>Telefono</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <xsl:for-each select="facultad/posgrado/maestria/administrativos">
-                                        <xsl:apply-templates select="personal" />
-                                    </xsl:for-each>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="card-body col-md-12">
+                        <table class="table" id="personal_academico">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Cargo</th>
+                                    <th>Fecha de Ingreso</th>
+                                    <th>Telefono</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <xsl:for-each select="facultad/posgrado/maestria/administrativos">
+                                    <xsl:apply-templates select="personal" />
+                                </xsl:for-each>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+            </div>
+          </div>
         </div>
-    
-        <!-- jQuery and Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+      </body>
       <script type="text/javascript">
         function agregar(tipo){
           switch (tipo) {
@@ -172,10 +174,10 @@
             case 3: //Para Materias
               window.location.href = "materias.php";
               break;
-
             case 4: //Para Personal Académico
               window.location.href = "personal.php";
               break;
+              
 
           }
         }
@@ -190,9 +192,8 @@
             case 3: //Para ISI
               window.location.href = "materias.php?id="+id;
               break;
-
-            case 4: //Para Personal Académico
-              window.location.href = "personal.php"+id;
+            case 4: //Para CM
+              window.location.href = "personal.php?id="+id;
               break;
           }
         }
@@ -228,10 +229,6 @@
               aviso="¿Eliminar Materia?"
               aviso2="Materia Eliminado"
               break;
-              
-            case 4: //Para Personal Académico
-              aviso="¿Eliminar Personal Académico?"
-              aviso2="Personal Académico Eliminado"
           }
 
           $( "<div>Esta acción no se puede deshacer... ¿Desea continuar?</div>" ).dialog({
