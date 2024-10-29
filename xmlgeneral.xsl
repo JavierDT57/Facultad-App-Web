@@ -135,11 +135,11 @@
                         </div>
                         <div class="col input-group" style="margin-top:10px;margin-left:20px">
                             <span class="input-group-text span_search">Búsqueda Por Nombre</span>
-                            <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm3" onkeyup="doSearch('personal_academico','searchTerm3')" />
+                            <input type="text" class="form-control input_search" placeholder="Nombre" id="searchTerm3" onkeyup="doSearch('administrativo','searchTerm3')" />
                         </div>
                     </div>
                     <div class="card-body col-md-12">
-                        <table class="table" id="personal_academico">
+                        <table class="table" id="">
                             <thead class="thead-dark">
                                 <tr>
                                     <th>ID</th>
@@ -147,11 +147,12 @@
                                     <th>Cargo</th>
                                     <th>Fecha de Ingreso</th>
                                     <th>Telefono</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <xsl:for-each select="facultad/posgrado/maestria/administrativos">
-                                    <xsl:apply-templates select="personal" />
+                                    <xsl:apply-templates select="administrativo" />
                                 </xsl:for-each>
                             </tbody>
                         </table>
@@ -376,7 +377,7 @@
             <td><xsl:value-of select="nombre"/></td>
             <td style="width: 150px;"><xsl:value-of select="correo_electronico"/></td>
             <td>
-              <xsl:for-each select="materias_imp">
+              <xsl:for-each select="area">
                 <xsl:apply-templates select="materia"/>
               </xsl:for-each>
             </td>
@@ -488,4 +489,40 @@
     </xsl:otherwise>
   </xsl:choose>
   </xsl:template>
+
+  <xsl:template match="administrativo">
+    <tr>
+        <td><xsl:value-of select="id_empleado"/></td>
+        <td><xsl:value-of select="nombre"/></td>
+        <td>
+            <xsl:choose>
+                <xsl:when test="@clave = 'SA'">Secretario Académico</xsl:when>
+                <xsl:when test="@clave = 'DI'">Director</xsl:when>
+                <xsl:when test="@clave = 'CO'">Coordinador de carrera</xsl:when>
+                <xsl:when test="@clave = 'SP'">Secretario de Posgrado</xsl:when>
+                <xsl:when test="@clave = 'SAD'">Secretario Administrativo</xsl:when>
+                <xsl:when test="@clave = 'CON'">Contador</xsl:when>
+                <xsl:otherwise>No disponible</xsl:otherwise>
+            </xsl:choose>
+        </td>
+        <td><xsl:value-of select="fecha_ing"/></td>
+        <td><xsl:value-of select="telefono"/></td>
+        <td>
+            <button type="button" name="button" class="btn btn-danger" data-toggle="popover" title="Eliminar Personal" style="height:32px;height:32px">
+                <xsl:attribute name="onclick">
+                    eliminar(<xsl:value-of select="id_empleado"/>,4)
+                </xsl:attribute>
+                <i class="fas fa-trash"></i>
+            </button>
+            <button type="button" name="button" class="btn btn-info" data-toggle="popover" title="Editar Personal" style="margin-left:5px;height:32px;height:32px">
+                <xsl:attribute name="onclick">
+                    editar(<xsl:value-of select="id_empleado"/>,4)
+                </xsl:attribute>
+                <i class="fas fa-user-edit"></i>
+            </button>
+        </td>
+    </tr>
+</xsl:template>
+
+
 </xsl:stylesheet>

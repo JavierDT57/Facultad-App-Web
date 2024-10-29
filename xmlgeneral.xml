@@ -4,19 +4,10 @@
   <posgrado>
     <maestria>
       <administrativos>
-        <administrativo clave="DI">
-          <id_empleado>3131</id_empleado>
-          <nombre>Javier</nombre>
-          <telefono>9717185574</telefono>
-          <fecha_ing>2024-10-05</fecha_ing>
-        </administrativo>
-        <administrativo clave="CON">
-          <id_empleado>31232</id_empleado>
-          <nombre>Javier</nombre>
-          <telefono>9717185574</telefono>
-          <fecha_ing>2024-10-11</fecha_ing>
-        </administrativo>
-      </administrativos>
+        
+        
+        
+      <administrativo clave="SA"><id_empleado>111</id_empleado><nombre>Javier Dolores</nombre><telefono>11231t555</telefono><fecha_ing>2024-10-09</fecha_ing></administrativo></administrativos>
       <areas>
         <area clave="BD">
           <alumnos>

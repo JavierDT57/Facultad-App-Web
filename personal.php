@@ -1,6 +1,12 @@
 <?php
-$xml = simplexml_load_file("xmlgeneral.xml");
-
+if (isset($_GET["id"])) {
+    $xml = simplexml_load_file("xmlgeneral.xml");
+    $administrativo = $xml->xpath(expression: "/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$_GET["id"]."]");
+    $area_dada = array();
+    foreach ($administrativo[0]->areas->area as $area) {
+        array_push($area_dada,strval($area->attributes()));
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -84,7 +90,7 @@ function guardar() {
                                 <div class="form-group col-md-4">
                                     <label>ID Empleado:</label>
                                     <input type="number" name="id_empleado" class="form-control" required
-                                    <?php if (isset($_GET["id"])) { echo "value='" . $_GET["id"] . "' disabled"; } ?>>
+                                    <?php if (isset($_GET["id"])) { echo "value='".$administrativo[0]->id_empleado."' disabled"; } ?>>
                                     <input type="hidden" name="id" id="id" value="<?php echo (isset($_GET["id"]) ? $_GET["id"] : "") ?>" />
                                     <input type="hidden" name="acc" id="acc" value="<?php echo (isset($_GET["id"]) ? "2" : "1") ?>" />
                                     <input type="hidden" name="tipo" id="tipo" value="4" />

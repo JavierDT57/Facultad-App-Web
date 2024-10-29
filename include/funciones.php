@@ -258,10 +258,11 @@ switch ($_POST["acc"]) {
         $materia->addChild('periodo', $periodo);
         echo $xml->asXML("../xmlgeneral.xml");
         break;
+
         case 4:
             #Editar Administrativos
-          $dato = $xml->xpath("/facultad/posgrado/maestria/personal/administrativos/administrativo[@id_empleado=".$id."]");
-          //Eliminar anterior
+          $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id."]");
+          //Eliminar el nodo anterior si existe
           unset($dato[0][0]);
           //Switchar área para obtener índice
           switch ( $area ) {
@@ -286,8 +287,8 @@ switch ($_POST["acc"]) {
           }
           //Insertar nuevo
           $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
-          $administrativo->addAttribute('es', "ADMIN");
-          $administrativo->addChild('id_empleado', $id_empleado);
+          $administrativo->addAttribute('clave', $area);
+          $administrativo->addChild('id_empleado', $id);
           $administrativo->addChild('nombre', $nombre);
           $administrativo->addChild('telefono', $telefono);
           $administrativo->addChild('fecha_ing', $fecha_ing);
@@ -300,7 +301,6 @@ switch ($_POST["acc"]) {
           $dom->preserveWhiteSpace = false;
           $dom->formatOutput = true;
           $dom->load("../xmlgeneral.xml");
-          $dom->save("../xmlgeneral.xml");
 
           echo $xml->asXML("../xmlgeneral.xml");
           break;
@@ -341,7 +341,7 @@ switch ($_POST["acc"]) {
 
       case 4:
         #Eliminar Administrativos
-        $dato = $xml->xpath("/facultad/posgrado/maestria/personal/administrativos/administrativo[@id_empleado=".$id."]");
+        $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id."]");
         unset($dato[0][0]);
         $xml->asXML("../xmlgeneral.xml");   
         break;
