@@ -173,6 +173,10 @@
               window.location.href = "materias.php";
               break;
 
+            case 4: //Para Personal Académico
+              window.location.href = "personal.php";
+              break;
+
           }
         }
         function editar(id,tipo){
@@ -185,6 +189,10 @@
               break;
             case 3: //Para ISI
               window.location.href = "materias.php?id="+id;
+              break;
+
+            case 4: //Para Personal Académico
+              window.location.href = "personal.php"+id;
               break;
           }
         }
@@ -220,6 +228,10 @@
               aviso="¿Eliminar Materia?"
               aviso2="Materia Eliminado"
               break;
+              
+            case 4: //Para Personal Académico
+              aviso="¿Eliminar Personal Académico?"
+              aviso2="Personal Académico Eliminado"
           }
 
           $( "<div>Esta acción no se puede deshacer... ¿Desea continuar?</div>" ).dialog({
