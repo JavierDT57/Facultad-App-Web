@@ -1,15 +1,5 @@
 <?php
 $xml = simplexml_load_file("xmlgeneral.xml");
-$puestos = $xml->xpath("/facultad/administracion/puestos/puesto");
-
-if (isset($_GET["id"])) {
-  # Recuperar datos del ID dado
-  $administrativo = $xml->xpath("/facultad/administracion/personal/empleados/empleado[@id_empleado=" . $_GET["id"] . "]");
-  $puestos_asignados = array();
-  foreach ($administrativo[0]->puestos_imp->puesto as $puesto) {
-    array_push($puestos_asignados, strval($puesto->attributes()));
-  }
-}
 
 ?>
 <!DOCTYPE html>
@@ -106,11 +96,18 @@ function guardar() {
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label>Departamento:</label>
-                                    <input type="text" name="departamento" class="form-control" required
-                                    <?php if (isset($_GET["id"])) { echo "value='" . $administrativo[0]->departamento . "'"; } ?>>
-                                </div>
+                            <div class="form-group col-md-4">
+                                <label>Cargo:</label>
+                                <select name="departamento" class="form-control" required>
+                                    <option value="">Seleccione un cargo</option>
+                                    <option value="Secretario Académico" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario Académico') echo 'selected'; ?>>Secretario Académico</option>
+                                    <option value="Director" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Director') echo 'selected'; ?>>Director</option>
+                                    <option value="Coordinador de carrera" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Coordinador de carrera') echo 'selected'; ?>>Coordinador de carrera</option>
+                                    <option value="Secretario de Posgrado" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario de Posgrado') echo 'selected'; ?>>Secretario de Posgrado</option>
+                                    <option value="Secretario Administrativo" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario Administrativo') echo 'selected'; ?>>Secretario Administrativo</option>
+                                    <option value="Contador" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Contador') echo 'selected'; ?>>Contador</option>
+                                </select>
+                            </div>
                                 <div class="form-group col-md-8">
                                     <label>Correo:</label>
                                     <input type="text" name="correo" class="form-control" required
