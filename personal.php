@@ -111,13 +111,13 @@ function guardar() {
                                 <div class="form-group col-md-8">
                                     <label>Telefono:</label>
                                     <input type="telephone" name="telefono" class="form-control" required
-                                    <?php if (isset($_GET["id"])) {echo "value='".$estudiante[0]->telefono."'";}?>>
+                                    <?php if (isset($_GET["id"])) {echo "value='".$administrativo[0]->telefono."'";}?>>
                                 </div>
                                 <div class="form-group col-md-8">
                                     <div class="input-group">
                                         <span class="input-group-text">Fecha de nacimiento:</span>
                                         <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_nac" onchange="calcularEdad(this.value);" required
-                                        <?php if (isset($_GET["id"])) {echo "value='".$estudiante[0]->fecha_nac."'";}?>>
+                                        <?php if (isset($_GET["id"])) {echo "value='".$administrativo[0]->fecha_nac."'";}?>>
                                     </div>
                                 </div>
                             </div>
@@ -132,35 +132,35 @@ function guardar() {
                         <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Personal
                         </button>
-                        <button type="button" class="btn btn-success" id="clonar_puesto">Agregar Personal</button>
-                        <button type="button" class="btn btn-danger" id="eliminar_puesto">Eliminar Personal</button>
+                        <button type="button" class="btn btn-success" id="clonar_administrativo">Agregar Personal</button>
+                        <button type="button" class="btn btn-danger" id="eliminar_administrativo">Eliminar Personal</button>
                     </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                     <div class="card-body" id="padre">
-                        <div id="puestos"><?php
-                            if (isset($puestos_asignados) && (count($puestos_asignados) > 0)) {
-                                for ($i = 0; $i < count($puestos_asignados); $i++) {
-                                    echo "<div class='form-row col-lg-12' id='puesto" . $i . "'>";
+                        <div id="administrativo"><?php
+                            if (isset($administrativos_asignados) && (count($administrativos_asignados) > 0)) {
+                                for ($i = 0; $i < count($administrativos_asignados); $i++) {
+                                    echo "<div class='form-row col-lg-12' id='adminis$administrativo" . $i . "'>";
                                     echo "<div class='from-group col-lg-8'>
-                                        <select class='custom-select col-lg-12' name='puestos[]'>";
-                                    foreach ($puestos as $puesto) {
+                                        <select class='custom-select col-lg-12' name='administrativos[]'>";
+                                    foreach ($administrativos as $administrativo) {
                                         $text = "";
-                                        if (strval($puesto->clave_puesto) == $puestos_asignados[$i]) {
+                                        if (strval($administrativo->clave_adminis$administrativo) == $administrativos_asignados[$i]) {
                                             $text = "Selected";
                                         }
-                                        echo "<option $text value='" . $puesto->clave_puesto . "'> " . $puesto->nombre . "</option>";
+                                        echo "<option $text value='" . $administrativo->clave_adminis$administrativo . "'> " . $administrativo->nombre . "</option>";
                                     }
                                     echo "</select>
                                         </div>
                                     </div>";
                                 }
                             } else {
-                                echo "<div class='form-row col-lg-12' id='puesto0'>";
+                                echo "<div class='form-row col-lg-12' id='adminis$administrativo0'>";
                                 echo "<div class='from-group col-lg-8'>
-                                    <select class='custom-select col-lg-12' name='puestos[]'>";
-                                foreach ($puestos as $puesto) {
-                                    echo "<option value='" . $puesto->clave_puesto . "'> " . $puesto->nombre . "</option>";
+                                    <select class='custom-select col-lg-12' name='administrativos[]'>";
+                                foreach ($administrativos as $administrativo) {
+                                    echo "<option value='" . $administrativo->clave_adminis$administrativo . "'> " . $administrativo->nombre . "</option>";
                                 }
                                 echo "</select>
                                     </div>
@@ -186,21 +186,21 @@ function guardar() {
 </form>
 </body>
 <script>
-$("#clonar_puesto").on("click", function() {
-    var cantidad = document.getElementsByName("puestos[]").length;
-    while ($("#puesto" + cantidad).length == 1) {
+$("#clonar_adminis$administrativo").on("click", function() {
+    var cantidad = document.getElementsByName("administrativos[]").length;
+    while ($("#adminis$administrativo" + cantidad).length == 1) {
         cantidad = cantidad + 1;
     }
-    $("#puestos").append("<div class='form-row col-lg-12' id='puesto" + cantidad + "'>" + document.getElementById("puesto0").innerHTML + "</div>")
+    $("#administrativos").append("<div class='form-row col-lg-12' id='adminis$administrativo" + cantidad + "'>" + document.getElementById("adminis$administrativo0").innerHTML + "</div>")
 });
 
-$("#eliminar_puesto").on("click", function() {
-    var cantidad = document.getElementsByName("puestos[]").length;
+$("#eliminar_adminis$administrativo").on("click", function() {
+    var cantidad = document.getElementsByName("administrativos[]").length;
     console.log(cantidad);
     if (cantidad != 1) {
-        $("#puesto" + (cantidad - 1)).remove();
+        $("#adminis$administrativo" + (cantidad - 1)).remove();
     } else {
-        alert("No se puede eliminar el último puesto");
+        alert("No se puede eliminar el último adminis$administrativo");
     }
 });
 </script>
