@@ -1,11 +1,25 @@
 <?php
+$xml = simplexml_load_file("xmlgeneral.xml");
+$administrativos = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo");
+
+$id_empleado = '';
+$nombre = '';
+$telefono = '';
+$fecha_ing = '';
+$area = '';
+
 if (isset($_GET["id"])) {
-    $xml = simplexml_load_file("xmlgeneral.xml");
-    $administrativo = $xml->xpath(expression: "/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$_GET["id"]."]");
-    $area_dada = array();
-    foreach ($administrativo[0]->areas->area as $area) {
-        array_push($area_dada,strval($area->attributes()));
-    }
+  // Recuperar datos con el ID dado
+  $administrativo = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado='" . $_GET["id"] . "']");
+
+  // Verificar que $administrativo sea un array válido y tenga datos
+  if (is_array($administrativo) && count($administrativo) > 0) {
+    $id_empleado = (string)$administrativo[0]->id_empleado;
+    $nombre = (string)$administrativo[0]->nombre;
+    $telefono = (string)$administrativo[0]->telefono;
+    $fecha_ing = (string)$administrativo[0]->fecha_ing;
+    $area = (string)$administrativo[0]->attributes()->clave; // Recuperar el área (clave)
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -104,14 +118,15 @@ function guardar() {
                             <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>Cargo:</label>
-                                <select class="custom-select" name="area">
-                                    <option value="SA" <?php if (isset($_GET["area"]) && $_GET["area"]=="SA") {echo "selected";}?>>Secretario Académico</option>
-                                    <option value="DI" <?php if (isset($_GET["area"]) && $_GET["area"]=="DI") {echo "selected";}?>>Director</option>
-                                    <option value="CO" <?php if (isset($_GET["area"]) && $_GET["area"]=="CO") {echo "selected";}?>>Coordinador de carrera</option>
-                                    <option value="SP" <?php if (isset($_GET["area"]) && $_GET["area"]=="SP") {echo "selected";}?>>Secretario de Posgrado</option>
-                                    <option value="SAD" <?php if (isset($_GET["area"]) && $_GET["area"]=="SAD") {echo "selected";}?>>Secretario Administrativo</option>
-                                    <option value="CON" <?php if (isset($_GET["area"]) && $_GET["area"]=="CON") {echo "selected";}?>>Contador</option>
-                                </select>
+                                    <select class="custom-select" name="area">
+                                        <option value="SA" <?php if ($area == "SA") echo "selected"; ?>>Secretario Académico</option>
+                                        <option value="DI" <?php if ($area == "DI") echo "selected"; ?>>Director</option>
+                                        <option value="CO" <?php if ($area == "CO") echo "selected"; ?>>Coordinador de carrera</option>
+                                        <option value="SP" <?php if ($area == "SP") echo "selected"; ?>>Secretario de Posgrado</option>
+                                        <option value="SAD" <?php if ($area == "SAD") echo "selected"; ?>>Secretario Administrativo</option>
+                                        <option value="CON" <?php if ($area == "CON") echo "selected"; ?>>Contador</option>
+                                    </select>
+
                             </div>
                                 <div class="form-group col-md-8">
                                     <label>Telefono:</label>
@@ -144,6 +159,6 @@ function guardar() {
     </div>
 </form>
 </body>
-<script>
+
 
 </html>
