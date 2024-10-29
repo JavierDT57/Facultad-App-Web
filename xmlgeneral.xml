@@ -4,7 +4,9 @@
   <posgrado>
     <maestria>
       <administrativos>      
-      </administrativos>
+      <administrativo es="ADMIN"><id_empleado>10</id_empleado><nombre>Javier Dolores Tolentino</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-03</fecha_ing></administrativo>
+    
+    <administrativo es="ADMIN"><id_empleado>100</id_empleado><nombre>Javier</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-11</fecha_ing></administrativo></administrativos>
       <areas>
         <area clave="BD">
           <alumnos>
@@ -24,7 +26,7 @@
         <area clave="ISI">
           <alumnos>
             
-          </alumnos>
+          <alumno><matricula>2</matricula><nombre>egweg</nombre><fecha_nac>2009-10-19</fecha_nac><edad>15</edad><tutor>vsfsvfvsfvsfvsfvsf</tutor><prom_actual>1.00</prom_actual><creditos>344</creditos><email>aaaa@gmail.com</email><telefono>9717185574</telefono><genero/><no_cvu>234324243242</no_cvu><curp>DOTJ020319HOCLLVA7</curp><rfc>5345345345345342</rfc><grados_academicos><grado><titulo>ebebb</titulo><promedio>1.00</promedio><escuela>gerggegegegg</escuela></grado></grados_academicos><materias><materia clave_mat="100036799"/></materias></alumno></alumnos>
         </area>
         <area clave="CM">
           <alumnos>

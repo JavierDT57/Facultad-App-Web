@@ -144,7 +144,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <xsl:for-each select="facultad/posgrado/maestria/personal_academico">
+                                    <xsl:for-each select="facultad/posgrado/maestria/administrativos">
                                         <xsl:apply-templates select="personal" />
                                     </xsl:for-each>
                                 </tbody>

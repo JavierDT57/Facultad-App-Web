@@ -87,7 +87,7 @@ function guardar() {
                                     <?php if (isset($_GET["id"])) { echo "value='" . $_GET["id"] . "' disabled"; } ?>>
                                     <input type="hidden" name="id" id="id" value="<?php echo (isset($_GET["id"]) ? $_GET["id"] : "") ?>" />
                                     <input type="hidden" name="acc" id="acc" value="<?php echo (isset($_GET["id"]) ? "2" : "1") ?>" />
-                                    <input type="hidden" name="tipo" id="tipo" value="1" />
+                                    <input type="hidden" name="tipo" id="tipo" value="4" />
                                 </div>
                                 <div class="form-group col-md-8">
                                     <label>Nombre completo:</label>
@@ -115,7 +115,7 @@ function guardar() {
                                 <div class="form-group col-md-8">
                                     <div class="input-group">
                                         <span class="input-group-text">Fecha de ingreso:</span>
-                                        <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_ing" onchange="calcularEdad(this.value);" required
+                                        <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_ing" required
                                         <?php if (isset($_GET["id"])) {echo "value='".$administrativo[0]->fecha_ing."'";}?>>
                                     </div>
                                 </div>
@@ -139,22 +139,5 @@ function guardar() {
 </form>
 </body>
 <script>
-$("#clonar_adminis$administrativo").on("click", function() {
-    var cantidad = document.getElementsByName("administrativos[]").length;
-    while ($("#adminis$administrativo" + cantidad).length == 1) {
-        cantidad = cantidad + 1;
-    }
-    $("#administrativos").append("<div class='form-row col-lg-12' id='adminis$administrativo" + cantidad + "'>" + document.getElementById("adminis$administrativo0").innerHTML + "</div>")
-});
 
-$("#eliminar_adminis$administrativo").on("click", function() {
-    var cantidad = document.getElementsByName("administrativos[]").length;
-    console.log(cantidad);
-    if (cantidad != 1) {
-        $("#adminis$administrativo" + (cantidad - 1)).remove();
-    } else {
-        alert("No se puede eliminar el último adminis$administrativo");
-    }
-});
-</script>
 </html>

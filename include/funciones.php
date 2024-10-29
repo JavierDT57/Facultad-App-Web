@@ -113,11 +113,13 @@ switch ($_POST["acc"]) {
         case 4:
           #Insertar Administrativo
             //Validar si existe la Materia
-            $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id_empleado."]");
-            if ( count($dato) > 0 ) {
-              //Ya existe
-              echo "0";
-            } else {
+        #Insertar Alumno
+          //Validar si existe el Alumno
+        $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id_empleado."]");
+        if ( count($dato) > 0 ) {
+          //Ya existe
+          echo "0";
+        } else {
 
               //Switchar área para obtener índice
               switch ( $area ) {
@@ -141,7 +143,7 @@ switch ($_POST["acc"]) {
                   break;
               }
               //No existe, realizar inserción
-              $administrativo = $xml->posgrado->maestria->Administrativos->addChild('administrativo');
+              $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
               $administrativo->addAttribute('es', "ADMIN");
               $administrativo->addChild('id_empleado', $id_empleado);
               $administrativo->addChild('nombre', $nombre);
