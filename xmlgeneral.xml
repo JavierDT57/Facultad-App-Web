@@ -4,14 +4,14 @@
   <posgrado>
     <maestria>
       <administrativos>
-        <administrativo es="ADMIN">
-          <id_empleado>7</id_empleado>
+        <administrativo clave="DI">
+          <id_empleado>3131</id_empleado>
           <nombre>Javier</nombre>
           <telefono>9717185574</telefono>
           <fecha_ing>2024-10-05</fecha_ing>
         </administrativo>
-        <administrativo es="ADMIN">
-          <id_empleado>8</id_empleado>
+        <administrativo clave="CON">
+          <id_empleado>31232</id_empleado>
           <nombre>Javier</nombre>
           <telefono>9717185574</telefono>
           <fecha_ing>2024-10-11</fecha_ing>
@@ -451,7 +451,6 @@
           <periodo>Primavera 2020</periodo>
         </materia>
         <!--Materias de CM-->
-        
       </materias>
     </maestria>
     <doctorado/>

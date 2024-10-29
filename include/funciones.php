@@ -141,7 +141,7 @@ switch ($_POST["acc"]) {
               }
         // No existe, realizar inserción
                 $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
-                $administrativo->addAttribute('es', "ADMIN");
+                $administrativo->addAttribute('clave', $area);
                 $administrativo->addChild('id_empleado', $id_empleado);
                 $administrativo->addChild('nombre', $nombre);
                 $administrativo->addChild('telefono', $telefono);
