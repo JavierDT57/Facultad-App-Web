@@ -111,10 +111,7 @@ switch ($_POST["acc"]) {
         break;
 
         case 4:
-          #Insertar Administrativo
-            //Validar si existe la Materia
-        #Insertar Alumno
-          //Validar si existe el Alumno
+        #Insertar Administrativo
         $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id_empleado."]");
         if ( count($dato) > 0 ) {
           //Ya existe
@@ -136,10 +133,10 @@ switch ($_POST["acc"]) {
                   $areaIndice = 3;
                   break;
                 case "SAD":
-                  $areaIndice = 3;
+                  $areaIndice = 4;
                   break;
                 case "CON":
-                  $areaIndice = 3;
+                  $areaIndice = 5;
                   break;
               }
         // No existe, realizar inserción
@@ -261,6 +258,52 @@ switch ($_POST["acc"]) {
         $materia->addChild('periodo', $periodo);
         echo $xml->asXML("../xmlgeneral.xml");
         break;
+        case 4:
+            #Editar Administrativos
+          $dato = $xml->xpath("/facultad/posgrado/maestria/personal/administrativos/administrativo[@id_empleado=".$id."]");
+          //Eliminar anterior
+          unset($dato[0][0]);
+          //Switchar área para obtener índice
+          switch ( $area ) {
+            case "SA":
+              $areaIndice = 0;
+              break;
+            case "DI":
+              $areaIndice = 1;
+              break;
+            case "CO":
+              $areaIndice = 2;
+              break;
+            case "SP":
+              $areaIndice = 3;
+              break;
+            case "SAD":
+              $areaIndice = 4;
+              break;
+            case "CON":
+              $areaIndice = 5;
+              break;
+          }
+          //Insertar nuevo
+          $administrativo = $xml->posgrado->maestria->administrativos->addChild('administrativo');
+          $administrativo->addAttribute('es', "ADMIN");
+          $administrativo->addChild('id_empleado', $id_empleado);
+          $administrativo->addChild('nombre', $nombre);
+          $administrativo->addChild('telefono', $telefono);
+          $administrativo->addChild('fecha_ing', $fecha_ing);
+
+          // Guardar el XML temporalmente
+          $xml->asXML("../xmlgeneral.xml");
+
+          // Formatear el XML con DOMDocument
+          $dom = new DOMDocument();
+          $dom->preserveWhiteSpace = false;
+          $dom->formatOutput = true;
+          $dom->load("../xmlgeneral.xml");
+          $dom->save("../xmlgeneral.xml");
+
+          echo $xml->asXML("../xmlgeneral.xml");
+          break;
     }
     break;
   case '3': #eliminar Registro del XML
@@ -294,6 +337,13 @@ switch ($_POST["acc"]) {
           unset($dato[$i][0]);
         }
         $xml->asXML("../xmlgeneral.xml");
+        break;
+
+      case 4:
+        #Eliminar Administrativos
+        $dato = $xml->xpath("/facultad/posgrado/maestria/personal/administrativos/administrativo[@id_empleado=".$id."]");
+        unset($dato[0][0]);
+        $xml->asXML("../xmlgeneral.xml");   
         break;
     }
     break;
