@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xmlgeneral.xsl"?>
+<facultad>
+  <posgrado>
+    <maestria>
+      <areas>
+        <area clave="BD">
+          <alumnos>
+            
+            
+            
+          </alumnos>
+        </area>
+        <area clave="SD">
+          <alumnos>
+            
+            
+            
+            
+          </alumnos>
+        </area>
+        <area clave="ISI">
+          <alumnos>
+            
+          </alumnos>
+        </area>
+        <area clave="CM">
+          <alumnos>
+            
+          </alumnos>
+        </area>
+      </areas>
+      <personal>
+        <!--Seccion 1-->
+        <profesores>
+          <profesor id_profesor="1">
+            <nombre>Mireya Tovar Vidal</nombre>
+            <materias_imp>
+              <materia clave_mat="100409344"/><!--Solo una referencia o se repita la info? (Esto es lo que preguntaremos)-->
+            </materias_imp>
+            <ubicacion>CC01</ubicacion>
+            <correo_electronico>mtovarvidal@gmail.com</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Mireya Tovar Vidal, David Eduardo Pinto Avendaño, Azucena Montes Rendón, Juan Gabriel González Serna, Darnes Vilariño Ayala</autores>
+                <titulo>Evaluation of ontological relations in corpora of restricted domain</titulo>
+                <anio>2015</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="2">
+            <nombre>María Josefa Somodevilla García</nombre>
+            <materias_imp>
+              <materia clave_mat="100036799"/>
+            </materias_imp>
+            <ubicacion>CC01-Oficina de Posgrado</ubicacion>
+            <correo_electronico>maria.somodevilla@correo.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Perez De Celis Herrero Concepcion, Lara Alvarez Jaime, Somodevilla Garcia Maria Josefa</autores>
+                <titulo>An Approach to Art Collections Management and Content-based Recovery</titulo>
+                <anio>2011</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="3">
+            <nombre>David Eduardo Pinto Avendaño</nombre>
+            <materias_imp>
+              <materia clave_mat="100237033"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 1 - CC03</ubicacion>
+            <correo_electronico>dpinto@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>	Jiménez Salazar, Héctor | Pinto Avendaño, David Eduardo | Rosso, Paolo</autores>
+                <titulo>Uso del punto de transición en la selección de términos índice para agrupamiento de textos cortos</titulo>
+                <anio>2005</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="4">
+            <nombre>Darnes Vilariño Ayala</nombre>
+            <materias_imp>
+              <materia clave_mat="100409411"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 206 - CC03</ubicacion>
+            <correo_electronico>darnes@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Esteban Castillo, Ofelia Cervantes, Darnes Vilariño, David Pinto and Saul León</autores>
+                <titulo>Unsupervised method for the authorship identification task</titulo>
+                <anio>2014</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <!--Profesores de Sist. Distribuidos-->
+          <profesor id_profesor="5">
+            <nombre>Miguel Ángel León Chávez</nombre>
+            <materias_imp>
+              <materia clave_mat="100334100"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 103 B - CC01</ubicacion>
+            <correo_electronico>mleon@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Francisco Rodríguez-Henríquez, Carlos E. López-Peza, Miguel Angel León-Chávez </autores>
+                <titulo>Comparative Performance Analysis of Public-Key Cryptographic Operations in the WTLS Handshake Protocol</titulo>
+                <anio>2004</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="6">
+            <nombre>Bárbara Emma Sánchex Rinza</nombre>
+            <materias_imp>
+              <materia clave_mat="100334100"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 306 - CC03</ubicacion>
+            <correo_electronico>brinza@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Bárbara Emma Sánchez Rinza, Elizabeth López Meléndez</autores>
+                <titulo>Sistema De Análisis De Mastografías Asistido Por Computadora </titulo>
+                <anio>2011</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="7">
+            <nombre>Ivo Humberto Pineda Torres</nombre>
+            <materias_imp>
+              <materia clave_mat="100130900"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 103 E - CC01</ubicacion>
+            <correo_electronico>ipineda@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Ivo Humberto Pineda Torres, María Josefa Somodevilla García, María del Carmen Lara Muñoz, Concepción Pérez de Celis Herrero, Rubén Espinosa Rodríguez</autores>
+                <titulo>Chatbots en redes sociales para el apoyo oportuno de estudiantes universitarios con síntomas de trastorno por déficit de la atención con hiperactividad</titulo>
+                <anio>2011</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="8">
+            <nombre>Iván Olmos Pineda</nombre>
+            <materias_imp>
+              <materia clave_mat="100334100"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 106 - CC03</ubicacion>
+            <correo_electronico>iolmos@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Ricardo Ramos-Aguilar, J. Arturo Olvera-López, Ivan Olmos-Pineda</autores>
+                <titulo>Analysis of EEG Signal Processing Techniques based on Spectrograms</titulo>
+                <anio>2017</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <!--Profesores de ISI-->
+          <profesor id_profesor="9">
+            <nombre>Guillermo De Ita Luna</nombre>
+            <materias_imp>
+              <materia clave_mat="100038766"/>
+            </materias_imp>
+            <ubicacion>Cubículo: CC01</ubicacion>
+            <correo_electronico>deita@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>GuillermoDe Ita Luna, J. Raymundo Marcial-Romero, José A.Hernández</autores>
+                <titulo>The Incremental Satisfiability Problem for a Two Conjunctive Normal Form</titulo>
+                <anio>2016</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="10">
+            <nombre>Luis Carlos Altamirano Robles</nombre>
+            <materias_imp>
+              <materia clave_mat="100223144"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 302 - CC04</ubicacion>
+            <correo_electronico>altamirano@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Guillermo De Ita Luna, Yolanda Moyao Martinez, Luis Carlos Altamirano Robles</autores>
+                <titulo>Applying Max-2SAT to Efficient Belief Revision</titulo>
+                <anio>2011</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="11">
+            <nombre>José Alejandro Rangel Huerta</nombre>
+            <materias_imp>
+              <materia clave_mat="100067111"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 111 - CC02</ubicacion>
+            <correo_electronico>alejandro.rangel.fcc@gmail.com</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Mario Mauricio Bustillo Díaz, Alejandro Rangel Huerta, Nicolás Quiroz Hernández, Gerardo Martines Guzmán, Juan Carlos Flores García,
+                  Mario Leopoldo Bustillo Eguiluz, Juan Aurelio Ortiz Morales
+                </autores>
+                <titulo>Defects Detection on the Surface of Pellets Using Digital Image Processing</titulo>
+                <anio>2015</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="12">
+            <nombre>Mario Anzures García</nombre>
+            <materias_imp>
+              <materia clave_mat="100210511"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 103 A - CC01</ubicacion>
+            <correo_electronico>anzures@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Mario Anzures-García, Luz A. Sánchez-Gálvez, Miguel J. Hornos, Patricia Paderewski-Rodríguez</autores>
+                <titulo>Ontology-Based Modelling of Session Management Policies for Groupware Applications</titulo>
+                <anio>2007</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <!--Profesores de Computación Matemática-->
+          <profesor id_profesor="13">
+            <nombre>María de Lourdes Sandoval Solís</nombre>
+            <materias_imp>
+              <materia clave_mat="100064377"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 106 - CC02</ubicacion>
+            <correo_electronico>maria.Sandoval@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Luis René Marcial Castillo, Erika Leonor Basurto Munguia, Marcela Rivera Martínez, María de Lourdes Sandoval Solis</autores>
+                <titulo>Método criptográfico simétrico utilizando teoría del caos, operaciones sobre ADN y raíces de funciones no lineales</titulo>
+                <anio>2016</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="14">
+            <nombre>Rogelio González Velazquez</nombre>
+            <materias_imp>
+              <materia clave_mat="100119488"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 103 K - CC01</ubicacion>
+            <correo_electronico>rgonzalez@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Mauricio Romero Montoya, María Beatríz Bernábe Loranca, Rogelio González Velázquez, José Luis Martínez Flores, Horacio Bautista Santos</autores>
+                <titulo>A Solution Proposal for the Capacitated P-Median Problem with Tabu Search</titulo>
+                <anio>2016</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="15">
+            <nombre>Pedro García Juárez</nombre>
+            <materias_imp>
+              <materia clave_mat="100190255"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 104 - CC02</ubicacion>
+            <correo_electronico>pgarcia@cs.buap.mx</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Ernest Cortez, German Ardul Muñoz Hernandez, José Italo Cortez, Liliana Cortez, Pedro García Juarez, Javier Poblano Romero</autores>
+                <titulo>Methodology for the MDL Model Implementation of the Dinorwig Hydroelectric Pla</titulo>
+                <anio>2013</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+          <profesor id_profesor="16">
+            <nombre>Maya Carrillo Ruiz</nombre>
+            <materias_imp>
+              <materia clave_mat="100299344"/>
+            </materias_imp>
+            <ubicacion>Cubículo: 113 - CC03</ubicacion>
+            <correo_electronico>cmaya@cs.buap.mxs</correo_electronico>
+            <publicaciones>
+              <publicacion>
+                <autores>Colmenares Guillén Luis Enrique, Carrillo Ruiz Maya, Jiménez González Fabiola, Hernández AmecamJosé Luis</autores>
+                <titulo>Problemas generados por el uso de la tecnología en los universitarios</titulo>
+                <anio>2017</anio>
+              </publicacion>
+            </publicaciones>
+          </profesor>
+        </profesores>
+      </personal>
+      <materias>
+        <!--Materias de Bases de datos-->
+        <materia es="MA">
+          <clave_mat>100036799</clave_mat>
+          <nombre>Mineria de Datos</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-10:59</horario>
+          <salon>202</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100237033</clave_mat>
+          <nombre>Recuperacion de la Información</nombre>
+          <creditos>9</creditos>
+          <horario>7:00-9:59</horario>
+          <salon>202</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100409411</clave_mat>
+          <nombre>Optativa I (Topicos selectos de BD-A)</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-11:59</horario>
+          <salon>208</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100409344</clave_mat>
+          <nombre>Optativa II (Topicos selectos de BD-B)</nombre>
+          <creditos>9</creditos>
+          <horario>11:00-12:59</horario>
+          <salon>208</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <!--Materias de Bases de datos-->
+        <!--Materias de Sistemas Distribuidos-->
+        <materia es="MA">
+          <clave_mat>100443488</clave_mat>
+          <nombre>Inteligencia Artificial</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-10:59</horario>
+          <salon>208</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100130900</clave_mat>
+          <nombre>Deep Learning</nombre>
+          <creditos>9</creditos>
+          <horario>11:00-13:59</horario>
+          <salon>203</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100334100</clave_mat>
+          <nombre>Sistemas Operativos Distribuidos en Red</nombre>
+          <creditos>9</creditos>
+          <horario>7:00-7:50, 13:00-13:59, 7:00-7:59</horario>
+          <salon>203</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100100768</clave_mat>
+          <nombre>Tópìcos Selectos de Redes</nombre>
+          <creditos>9</creditos>
+          <horario>11:00-12:59</horario>
+          <salon>203</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <!--Materias de Sistemas Distribuidos-->
+        <!--Materias de ISI-->
+        <materia es="MA">
+          <clave_mat>100067111</clave_mat>
+          <nombre>Modelado y Simulación</nombre>
+          <creditos>9</creditos>
+          <horario>13:00-14:59</horario>
+          <salon>207</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100210511</clave_mat>
+          <nombre>Sistemas y Cómputo Reconfigurable</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-10:59</horario>
+          <salon>204</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100038766</clave_mat>
+          <nombre>Optativa I (Teoría de Grafos)</nombre>
+          <creditos>9</creditos>
+          <horario>7:00-8:59, 9:00-10:59</horario>
+          <salon>205</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100223144</clave_mat>
+          <nombre>Inteligencia Computacional</nombre>
+          <creditos>9</creditos>
+          <horario>11:00-12:59</horario>
+          <salon>204</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <!--Materias de ISI-->
+        <!--Materias de CM-->
+        <materia es="MA">
+          <clave_mat>100190255</clave_mat>
+          <nombre>Optativa II (Probabilidad y Estadística)</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-10:59</horario>
+          <salon>208</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100299344</clave_mat>
+          <nombre>Optativa 1 (Métodos Heurísticos)</nombre>
+          <creditos>9</creditos>
+          <horario>15:00-16:59</horario>
+          <salon>203</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100119488</clave_mat>
+          <nombre>Investigación de Operaciones</nombre>
+          <creditos>9</creditos>
+          <horario>11:00-12:59</horario>
+          <salon>207</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <materia es="MA">
+          <clave_mat>100064377</clave_mat>
+          <nombre>Análisis Numérico</nombre>
+          <creditos>9</creditos>
+          <horario>9:00-11:59</horario>
+          <salon>205</salon>
+          <periodo>Primavera 2020</periodo>
+        </materia>
+        <!--Materias de CM-->
+      </materias>
+    </maestria>
+    <doctorado/>
+  </posgrado>
+  <licenciatura/>
+</facultad>
