@@ -109,9 +109,16 @@ function guardar() {
                                 </select>
                             </div>
                                 <div class="form-group col-md-8">
-                                    <label>Correo:</label>
-                                    <input type="text" name="correo" class="form-control" required
-                                    <?php if (isset($_GET["id"])) { echo "value='" . $administrativo[0]->correo . "'"; } ?>>
+                                    <label>Telefono:</label>
+                                    <input type="telephone" name="telefono" class="form-control" required
+                                    <?php if (isset($_GET["id"])) {echo "value='".$estudiante[0]->telefono."'";}?>>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Fecha de nacimiento:</span>
+                                        <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_nac" onchange="calcularEdad(this.value);" required
+                                        <?php if (isset($_GET["id"])) {echo "value='".$estudiante[0]->fecha_nac."'";}?>>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -123,10 +130,10 @@ function guardar() {
                 <div class="card-header" id="headingTwo">
                     <h5 class="mb-0">
                         <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Puestos
+                            Personal
                         </button>
-                        <button type="button" class="btn btn-success" id="clonar_puesto">Agregar Puesto</button>
-                        <button type="button" class="btn btn-danger" id="eliminar_puesto">Eliminar Puesto</button>
+                        <button type="button" class="btn btn-success" id="clonar_puesto">Agregar Personal</button>
+                        <button type="button" class="btn btn-danger" id="eliminar_puesto">Eliminar Personal</button>
                     </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
