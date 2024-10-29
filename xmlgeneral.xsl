@@ -34,7 +34,7 @@
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body col-md-12">
                             <xsl:for-each select="facultad/posgrado/maestria/areas">
                                 <xsl:apply-templates select="area" />
@@ -139,7 +139,8 @@
                                         <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Cargo</th>
-                                        <th>Acciones</th>
+                                        <th>Fecha de Ingreso</th>
+                                        <th>Telefono</th>
                                     </tr>
                                 </thead>
                                 <tbody>
