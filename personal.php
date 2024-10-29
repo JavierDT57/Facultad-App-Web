@@ -146,10 +146,10 @@ function guardar() {
                                         <select class='custom-select col-lg-12' name='administrativos[]'>";
                                     foreach ($administrativos as $administrativo) {
                                         $text = "";
-                                        if (strval($administrativo->clave_adminis$administrativo) == $administrativos_asignados[$i]) {
+                                        if (strval($administrativo->clave_adminis) == $administrativos_asignados[$i]) {
                                             $text = "Selected";
                                         }
-                                        echo "<option $text value='" . $administrativo->clave_adminis$administrativo . "'> " . $administrativo->nombre . "</option>";
+                                        echo "<option $text value='" . $administrativo->clave_adminis . "'> " . $administrativo->nombre . "</option>";
                                     }
                                     echo "</select>
                                         </div>
@@ -160,7 +160,7 @@ function guardar() {
                                 echo "<div class='from-group col-lg-8'>
                                     <select class='custom-select col-lg-12' name='administrativos[]'>";
                                 foreach ($administrativos as $administrativo) {
-                                    echo "<option value='" . $administrativo->clave_adminis$administrativo . "'> " . $administrativo->nombre . "</option>";
+                                    echo "<option value='" . $administrativo->clave_adminis . "'> " . $administrativo->nombre . "</option>";
                                 }
                                 echo "</select>
                                     </div>
