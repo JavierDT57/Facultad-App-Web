@@ -3,13 +3,15 @@
 <facultad>
   <posgrado>
     <maestria>
+      <administrativos>      
+      </administrativos>
       <areas>
         <area clave="BD">
           <alumnos>
             
             
             
-          </alumnos>
+          <alumno><matricula>45454545</matricula><nombre>Javier</nombre><fecha_nac>2009-10-19</fecha_nac><edad>15</edad><tutor>vsfsvfvsfvsfvsfvsf</tutor><prom_actual>1.00</prom_actual><creditos>344</creditos><email>aaaa@gmail.com</email><telefono>9717185574</telefono><genero>M</genero><no_cvu>234324243242</no_cvu><curp>DOTJ020319HOCLLVA8</curp><rfc>5345345345345345</rfc><grados_academicos><grado><titulo>ebebb</titulo><promedio>1.00</promedio><escuela>gerggegegegg</escuela></grado></grados_academicos><materias><materia clave_mat="100036799"/><materia clave_mat="100036799"/></materias></alumno></alumnos>
         </area>
         <area clave="SD">
           <alumnos>

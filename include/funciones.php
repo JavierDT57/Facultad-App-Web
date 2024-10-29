@@ -109,6 +109,47 @@ switch ($_POST["acc"]) {
           echo $xml->asXML("../xmlgeneral.xml");
         }
         break;
+
+        case 4:
+          #Insertar Administrativo
+            //Validar si existe la Materia
+            $dato = $xml->xpath("/facultad/posgrado/maestria/administrativos/administrativo[id_empleado=".$id_empleado."]");
+            if ( count($dato) > 0 ) {
+              //Ya existe
+              echo "0";
+            } else {
+
+              //Switchar área para obtener índice
+              switch ( $area ) {
+                case "SA":
+                  $areaIndice = 0;
+                  break;
+                case "DI":
+                  $areaIndice = 1;
+                  break;
+                case "CO":
+                  $areaIndice = 2;
+                  break;
+                case "SP":
+                  $areaIndice = 3;
+                  break;
+                case "SAD":
+                  $areaIndice = 3;
+                  break;
+                case "CON":
+                  $areaIndice = 3;
+                  break;
+              }
+              //No existe, realizar inserción
+              $administrativo = $xml->posgrado->maestria->Administrativos->addChild('administrativo');
+              $administrativo->addAttribute('es', "ADMIN");
+              $administrativo->addChild('id_empleado', $id_empleado);
+              $administrativo->addChild('nombre', $nombre);
+              $administrativo->addChild('telefono', $telefono);
+              $administrativo->addChild('fecha_ing', $fecha_ing);
+              echo $xml->asXML("../xmlgeneral.xml");
+            }
+            break;
     }
     break;
   case '2': #editar Registro del XML

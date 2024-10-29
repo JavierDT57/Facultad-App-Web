@@ -49,7 +49,7 @@ function guardar() {
                     buttons: {
                         "Entendido": function() {
                             $(this).dialog("close");
-                            document.location = 'xmlpersonal.xml';
+                            document.location = 'xmlgeneral.xml';
                         }
                     }
                 });
@@ -98,14 +98,13 @@ function guardar() {
                             <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>Cargo:</label>
-                                <select name="departamento" class="form-control" required>
-                                    <option value="">Seleccione un cargo</option>
-                                    <option value="Secretario Académico" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario Académico') echo 'selected'; ?>>Secretario Académico</option>
-                                    <option value="Director" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Director') echo 'selected'; ?>>Director</option>
-                                    <option value="Coordinador de carrera" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Coordinador de carrera') echo 'selected'; ?>>Coordinador de carrera</option>
-                                    <option value="Secretario de Posgrado" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario de Posgrado') echo 'selected'; ?>>Secretario de Posgrado</option>
-                                    <option value="Secretario Administrativo" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Secretario Administrativo') echo 'selected'; ?>>Secretario Administrativo</option>
-                                    <option value="Contador" <?php if (isset($_GET["id"]) && $administrativo[0]->departamento == 'Contador') echo 'selected'; ?>>Contador</option>
+                                <select class="custom-select" name="area">
+                                    <option value="SA" <?php if (isset($_GET["area"]) && $_GET["area"]=="SA") {echo "selected";}?>>Secretario Académico</option>
+                                    <option value="DI" <?php if (isset($_GET["area"]) && $_GET["area"]=="DI") {echo "selected";}?>>Director</option>
+                                    <option value="CO" <?php if (isset($_GET["area"]) && $_GET["area"]=="CO") {echo "selected";}?>>Coordinador de carrera</option>
+                                    <option value="SP" <?php if (isset($_GET["area"]) && $_GET["area"]=="SP") {echo "selected";}?>>Secretario de Posgrado</option>
+                                    <option value="SAD" <?php if (isset($_GET["area"]) && $_GET["area"]=="SAD") {echo "selected";}?>>Secretario Administrativo</option>
+                                    <option value="CON" <?php if (isset($_GET["area"]) && $_GET["area"]=="CON") {echo "selected";}?>>Contador</option>
                                 </select>
                             </div>
                                 <div class="form-group col-md-8">
@@ -115,9 +114,9 @@ function guardar() {
                                 </div>
                                 <div class="form-group col-md-8">
                                     <div class="input-group">
-                                        <span class="input-group-text">Fecha de nacimiento:</span>
-                                        <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_nac" onchange="calcularEdad(this.value);" required
-                                        <?php if (isset($_GET["id"])) {echo "value='".$administrativo[0]->fecha_nac."'";}?>>
+                                        <span class="input-group-text">Fecha de ingreso:</span>
+                                        <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="fecha" name="fecha_ing" onchange="calcularEdad(this.value);" required
+                                        <?php if (isset($_GET["id"])) {echo "value='".$administrativo[0]->fecha_ing."'";}?>>
                                     </div>
                                 </div>
                             </div>
