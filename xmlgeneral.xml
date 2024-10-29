@@ -6,7 +6,8 @@
       <administrativos>      
       <administrativo es="ADMIN"><id_empleado>10</id_empleado><nombre>Javier Dolores Tolentino</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-03</fecha_ing></administrativo>
     
-    <administrativo es="ADMIN"><id_empleado>100</id_empleado><nombre>Javier</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-11</fecha_ing></administrativo></administrativos>
+    <administrativo es="ADMIN"><id_empleado>100</id_empleado><nombre>Javier</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-11</fecha_ing></administrativo>
+    <administrativo es="ADMIN"><id_empleado>20</id_empleado><nombre>diws</nombre><telefono>9717185574</telefono><fecha_ing>2024-10-12</fecha_ing></administrativo></administrativos>
       <areas>
         <area clave="BD">
           <alumnos>
