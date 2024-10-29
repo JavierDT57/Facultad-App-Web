@@ -125,52 +125,6 @@ function guardar() {
                     </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Personal
-                        </button>
-                        <button type="button" class="btn btn-success" id="clonar_administrativo">Agregar Personal</button>
-                        <button type="button" class="btn btn-danger" id="eliminar_administrativo">Eliminar Personal</button>
-                    </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body" id="padre">
-                        <div id="administrativo"><?php
-                            if (isset($administrativos_asignados) && (count($administrativos_asignados) > 0)) {
-                                for ($i = 0; $i < count($administrativos_asignados); $i++) {
-                                    echo "<div class='form-row col-lg-12' id='adminis$administrativo" . $i . "'>";
-                                    echo "<div class='from-group col-lg-8'>
-                                        <select class='custom-select col-lg-12' name='administrativos[]'>";
-                                    foreach ($administrativos as $administrativo) {
-                                        $text = "";
-                                        if (strval($administrativo->clave_adminis) == $administrativos_asignados[$i]) {
-                                            $text = "Selected";
-                                        }
-                                        echo "<option $text value='" . $administrativo->clave_adminis . "'> " . $administrativo->nombre . "</option>";
-                                    }
-                                    echo "</select>
-                                        </div>
-                                    </div>";
-                                }
-                            } else {
-                                echo "<div class='form-row col-lg-12' id='adminis$administrativo0'>";
-                                echo "<div class='from-group col-lg-8'>
-                                    <select class='custom-select col-lg-12' name='administrativos[]'>";
-                                foreach ($administrativos as $administrativo) {
-                                    echo "<option value='" . $administrativo->clave_adminis . "'> " . $administrativo->nombre . "</option>";
-                                }
-                                echo "</select>
-                                    </div>
-                                </div>";
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <br>
         <?php if (!isset($_GET["id"])): ?>
